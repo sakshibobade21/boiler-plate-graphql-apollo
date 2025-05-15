@@ -5,16 +5,23 @@ export const resolvers = {
     books: () => books,
     authors: () => authors
   },
+  Author: {
+    books: (parent) => {
+      return books.filter(book => book.authorId === parent.id)
+    }
+  }
+ 
 };
 
 /*
 query {
-  books{
-    id
-    title
-  }
   authors{
+    id
     name
+    books {
+      id
+      title
+    }
   }
 }
 */

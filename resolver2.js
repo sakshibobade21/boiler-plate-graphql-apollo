@@ -5,6 +5,11 @@ export const resolvers = {
     books: () => books,
     authors: () => authors
   },
+  Book: {
+    author: (parent) => {
+      return authors.find(auth => auth.id === parent.authorId)
+    }
+  }
 };
 
 /*
@@ -12,9 +17,9 @@ query {
   books{
     id
     title
-  }
-  authors{
-    name
+    authors{
+      name
+    }
   }
 }
 */
