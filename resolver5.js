@@ -17,3 +17,13 @@ export const resolvers = {
   }
  
 };
+
+
+/*
+  mutation AddAuthor($name: String!, $bookIds: [ID!]!) {
+    addAuthor(name: $name, bookIds: $bookIds) {
+      name
+    }
+  }
+
+*/
